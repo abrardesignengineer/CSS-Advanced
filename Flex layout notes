@@ -1,0 +1,151 @@
+# CSS Flexbox: Direction, Wrapping and Alignment
+
+## 1. `flex-direction`
+
+Controls the direction in which flex items are arranged.
+
+```css
+.container {
+  display: flex;
+  flex-direction: row;
+}
+```
+
+- `row`: Horizontal arrangement; default direction.
+- `column`: Vertical arrangement.
+- `row-reverse`: Horizontal arrangement in reverse order.
+- `column-reverse`: Vertical arrangement in reverse order.
+
+The direction determines the main axis.
+
+## 2. `flex-wrap`
+
+Controls whether flex items can wrap onto additional lines.
+
+```css
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+```
+
+- `nowrap`: Items remain on one flex line and may shrink if permitted by their sizing constraints.
+- `wrap`: Items can move onto additional lines when necessary.
+- `wrap-reverse`: Items can wrap, but the cross-axis direction of the lines is reversed.
+
+Example:
+
+```css
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+```
+
+If the items cannot fit on one line at their required sizes, they can continue onto another line.
+
+**Important:** `wrap-reverse` does not simply move the last item to the top. It reverses the cross-axis direction in which flex lines are laid out. The exact visual result depends on the flex direction and available space.
+
+## 3. `justify-content`
+
+Controls the distribution and alignment of flex items along the main axis.
+
+```css
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+```
+
+Common values:
+
+- `flex-start`: Items are grouped at the main-start edge.
+- `flex-end`: Items are grouped at the main-end edge.
+- `center`: Items are grouped at the center.
+- `space-between`: Equal space between items, with no extra distribution space at the outer edges.
+- `space-around`: Equal space around each item; outer spaces are half the size of the spaces between items.
+- `space-evenly`: Equal space between adjacent items and at both outer edges.
+
+The result depends on the main axis and the available free space.
+
+## 4. `align-items`
+
+Controls how flex items are aligned along the cross axis within a flex line.
+
+```css
+.container {
+  display: flex;
+  align-items: center;
+}
+```
+
+Common values:
+
+- `flex-start`
+- `flex-end`
+- `center`
+- `stretch`
+- `baseline`
+
+**Important:** `align-items` does not require `flex-wrap: wrap`. It works with both `nowrap` and `wrap`.
+
+## 5. `align-content`
+
+Controls the distribution and alignment of multiple flex lines along the cross axis.
+
+```css
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+```
+
+Common values include:
+
+- `flex-start`
+- `flex-end`
+- `center`
+- `space-between`
+- `space-around`
+- `space-evenly`
+- `stretch`
+
+`align-content` is useful when a container has multiple flex lines and available space along the cross axis.
+
+For example, if a container has several rows of items, `align-content: flex-start` groups those rows toward the cross-start edge.
+
+**Important:** `align-content` is not restricted to `flex-wrap: wrap`, but its line-distribution effect is meaningful when there are multiple flex lines. With `nowrap`, there is normally only one flex line.
+
+## 6. Parent vs. Child Properties
+
+Most of today's properties are applied to the flex container, not directly to individual flex items.
+
+```css
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+}
+```
+
+The container controls the arrangement of its direct children.
+
+## 7. Quick Reference
+
+| Property | Purpose |
+|---|---|
+| `flex-direction` | Sets the direction of the main axis |
+| `flex-wrap` | Controls whether items can wrap onto multiple lines |
+| `justify-content` | Aligns or distributes items along the main axis |
+| `align-items` | Aligns items along the cross axis within a line |
+| `align-content` | Aligns or distributes multiple flex lines along the cross axis |
+| `gap` | Sets spacing between items and flex lines |
+
+## Key Takeaway
+
+Understand the main axis and cross axis first. Then determine whether you are aligning items within a line or distributing multiple lines. This makes Flexbox much easier to reason about.
