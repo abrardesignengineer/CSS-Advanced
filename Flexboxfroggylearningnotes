@@ -1,0 +1,137 @@
+# CSS Flexbox — Flexbox Froggy
+
+**Practice:** Completed all 24 levels  
+**Time taken:** Approximately 1 hour  
+**Method:** Hands-on problem-solving
+
+## 1. Flex Container
+
+```css
+.container {
+  display: flex;
+}
+```
+
+- `display: flex` creates a flex container.
+- Its direct children become flex items.
+- Most Flexbox layout properties are applied to the parent container.
+
+## 2. Flex Direction
+
+```css
+flex-direction: row;
+flex-direction: column;
+flex-direction: row-reverse;
+flex-direction: column-reverse;
+```
+
+Controls the main axis and the direction in which flex items are laid out.
+
+- `row`: Horizontal, left to right in the usual left-to-right layout.
+- `column`: Vertical, top to bottom.
+- `row-reverse`: Horizontal, reversed.
+- `column-reverse`: Vertical, reversed.
+
+Default: `row`.
+
+## 3. Justify Content
+
+```css
+justify-content: flex-start;
+justify-content: flex-end;
+justify-content: center;
+justify-content: space-between;
+justify-content: space-around;
+justify-content: space-evenly;
+```
+
+Controls alignment and distribution along the **main axis**.
+
+- `flex-start`: Items toward the start.
+- `flex-end`: Items toward the end.
+- `center`: Items grouped in the center.
+- `space-between`: Equal space between items, with no extra space at the ends.
+- `space-around`: Space around each item.
+- `space-evenly`: Equal spacing between items and the container edges.
+
+The main axis depends on `flex-direction`.
+
+## 4. Align Items
+
+```css
+align-items: flex-start;
+align-items: flex-end;
+align-items: center;
+align-items: stretch;
+align-items: baseline;
+```
+
+Controls alignment along the **cross axis** within each flex line.
+
+- `flex-start`: Align items toward the cross-axis start.
+- `flex-end`: Align items toward the cross-axis end.
+- `center`: Center items along the cross axis.
+- `stretch`: Stretch items when applicable.
+- `baseline`: Align text baselines.
+
+## 5. Flex Wrap
+
+```css
+flex-wrap: nowrap;
+flex-wrap: wrap;
+flex-wrap: wrap-reverse;
+```
+
+Controls whether flex items can move onto additional flex lines.
+
+- `nowrap`: Keeps items on one flex line; items may shrink if permitted.
+- `wrap`: Allows items to move onto additional lines.
+- `wrap-reverse`: Allows wrapping while reversing the cross-axis direction of the flex lines.
+
+With `flex-direction: row`, wrapping usually creates additional rows. With `flex-direction: column`, it usually creates additional columns.
+
+## 6. Align Content
+
+```css
+align-content: flex-start;
+align-content: flex-end;
+align-content: center;
+align-content: space-between;
+align-content: space-around;
+align-content: space-evenly;
+align-content: stretch;
+```
+
+Controls the alignment and distribution of **multiple flex lines** along the cross axis when space is available.
+
+Its line-distribution effect requires multiple flex lines.
+
+Do not confuse it with `align-items`:
+- `align-items`: Aligns items within a flex line.
+- `align-content`: Aligns or distributes the flex lines themselves.
+
+## 7. Align Self
+
+```css
+align-self: center;
+```
+
+Overrides `align-items` for an individual flex item.
+
+It is applied to the item, not the flex container.
+
+## 8. Key Takeaways
+
+- `justify-content` → main axis.
+- `align-items` → cross-axis alignment of items within a flex line.
+- `align-content` → distribution of multiple flex lines.
+- `align-self` → alignment override for an individual flex item.
+- `flex-wrap` → whether items can wrap into additional flex lines.
+- `flex-direction` → determines the main axis and item direction.
+- Flexbox properties must be understood in relation to the container's available space and axis direction.
+
+## Practice Result
+
+Completed all 24 Flexbox Froggy levels in approximately one hour.
+
+The main learning outcome was understanding how direction, wrapping, and alignment properties work together to position items.
