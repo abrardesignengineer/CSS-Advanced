@@ -1,0 +1,57 @@
+# Day 38 — HTML Structure: SaaS Dashboard Project
+
+### Today's work
+Started building a SaaS Dashboard Layout Playground using HTML and CSS.
+
+### HTML concepts practised
+
+- HTML document structure: `DOCTYPE`, `html`, `head`, and `body`.
+- Character encoding using UTF-8.
+- Linking an external CSS stylesheet.
+- Importing Google Fonts.
+- Semantic content hierarchy using `h1`, `h2`, paragraphs and lists.
+- Creating navigation links using `ul`, `li` and `a`.
+- Creating parent and child containers using `div`.
+- Nesting elements and maintaining correctly matched opening and closing tags.
+
+### Project structure
+
+Planned dashboard sections:
+
+- Sidebar navigation
+- Main content area
+- Navbar
+- Overview heading
+- Three summary cards: Revenue, Users and Conversion
+- Recent Activity section
+
+### Important learning
+
+**Parent-child relationships determine how Flexbox works.**
+
+A Flex container controls the layout of its direct children. Nested containers can independently control their own children.
+
+Planned hierarchy:
+
+- Dashboard container → Sidebar and Main
+- Main → Navbar, Overview, Cards and Activity
+- Cards → Revenue, Users and Conversion
+
+### Problems encountered
+
+- Incorrect HTML document nesting.
+- Missing closing `div` tags.
+- Incorrect nesting of summary cards.
+- Understanding where to place parent containers.
+- Determining the correct hierarchy before applying Flexbox.
+
+### Next session
+
+1. Finalise the HTML hierarchy.
+2. Validate the HTML structure.
+3. Start CSS styling.
+4. Build the outer dashboard layout using Flexbox.
+5. Position the sidebar and main content.
+6. Position the navbar above the dashboard content.
+
+**Status:** HTML structure in progress. CSS layout not started.
